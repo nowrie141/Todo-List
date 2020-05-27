@@ -1,9 +1,11 @@
 const inputTask = document.querySelector("#input-task");
 const addTaskbtn = document.querySelector("#add-task");
 const removeTaskbtn = document.querySelector("#remove-tasks");
+const selectTaskbtn = document.querySelector("#select-tasks");
 const taskList = document.querySelector("#task-list");
 const taskTemplate = document.querySelector("#task-template");
 
+let allChecked = false;
 let idNumber = 1;
 
 inputTask.addEventListener("keyup", (e) => {
@@ -16,6 +18,16 @@ addTaskbtn.addEventListener("click", () => {
   if(isValid()){
     addTask();
   }
+});
+
+selectTaskbtn.addEventListener("click", ()=>{
+  const tasks = document.querySelectorAll(".task");
+    for(let task of tasks){
+      const isChecked = !task.querySelector("input").checked;
+        if (isChecked){
+          task.querySelector("input").checked=true;
+        }
+    }
 });
 
 removeTaskbtn.addEventListener("click", ()=>{

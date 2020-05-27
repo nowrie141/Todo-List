@@ -3,27 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Todo List</title>
+  <title>ToDo List</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    </style>
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
   <div id="header">
-    <div class="header-tittle">
-      <h1>Todo List</h1>
+    <div class="header-title flex">
+      <h1>ToDo List</h1>
     </div>
-    <div class="header-input">
-      <input type="text" placeholder="Input task..." id="input-task">
-      <button id="add-task">Add</button>
+    <div class="header-input flex">
+      <input type="text" placeholder="Input new task..." id="input-task">
+      <button id="add-task">+</button>
     </div>
   </div>
-  <div id="list-header">
-    <h2>Tasks</h2>
-    <button id="remove-tasks">Remove Complete</button>
+
+  <div id="list-header" class="flex">
+    <div class="task-header">    <h2>Tasks</h2></div>
+    <div class="task-functions">
+      <button id="select-tasks">Select All</button>
+      <button id="remove-tasks">Remove Complete</button>
+    </div>
+
   </div>
+
   <div id="list-content">
     <ul id="task-list">
     </ul>
   </div>
+
   <template id="task-template">
     <li class="task">
       <input type="checkbox" />
@@ -33,6 +43,7 @@
       </label>
     </li>
   </template>
+
   <script src="main.js"></script>
 </body>
 </html>
